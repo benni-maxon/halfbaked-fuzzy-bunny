@@ -1,4 +1,4 @@
-import { createBunny, getFamilies, checkAuth, logout } from '../fetch-utils.js';
+import { createBunny, getFamilies, checkAuth, logout, redirectIfLoggedIn } from '../fetch-utils.js';
 
 const form = document.querySelector('.bunny-form');
 const logoutButton = document.getElementById('logout');
@@ -19,6 +19,7 @@ form.addEventListener('submit', async (e) => {
     });
 
     form.reset();
+    location.replace('../families');
 });
 
 window.addEventListener('load', async () => {

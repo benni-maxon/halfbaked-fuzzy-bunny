@@ -31,7 +31,10 @@ async function displayFamilies() {
             bunnyEl.classList.add('bunny');
             bunnyEl.textContent = bunny.name;
             //    add an event listener to the bunny el. On click, delete the bunny, then refetch and redisplay all families.
-
+            bunnyEl.addEventListener('click', async () => {
+                await deleteBunny(bunny.id);
+                displayFamilies();
+            });
             bunniesEl.append(bunnyEl);
         }
         familyEl.append(h3, bunniesEl);

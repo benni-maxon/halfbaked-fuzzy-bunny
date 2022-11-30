@@ -14,7 +14,6 @@ export async function getFamilies() {
         .from('loving_families')
         .select('*, fuzzy_bunnies(*)')
         .match({ 'fuzzy_bunnies.user_id': client.auth.session().user.id });
-    console.log(response);
 
     return checkError(response);
     // fetch all families and their bunnies
