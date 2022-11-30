@@ -16,7 +16,6 @@ async function displayFamilies() {
     familiesEl.textContent = '';
     // loop through each family and for each family:
     for (let family of families) {
-        console.log(family);
         const familyEl = document.createElement('div');
         familyEl.classList.add('family');
 
